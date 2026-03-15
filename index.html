@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Developer | Portfolio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgMain: '#050105',
+                        gradStart: '#6408BF',
+                        gradEnd: '#B1164E',
+                        sec1: '#646D98',
+                        sec2: '#5F645E',
+                        textDark: '#b3b3b3',
+                        accent1: '#E5CEFF',
+                        accent2: '#D79BC8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-custom': 'linear-gradient(to right, #6408BF, #B1164E)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Global Background Elements -->
+    <div class="fixed inset-0 z-[-1] pointer-events-none">
+        <div
+            class="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gradStart opacity-20 blur-[150px]">
+        </div>
+        <div
+            class="absolute top-[40%] right-[-10%] w-[400px] h-[400px] rounded-full bg-gradEnd opacity-10 blur-[120px]">
+        </div>
+        <div
+            class="absolute bottom-[-10%] left-[20%] w-[300px] h-[300px] rounded-full bg-accent1 opacity-10 blur-[100px]">
+        </div>
+        <div id="particles-container"></div>
+    </div>
+
+    <!-- 1. NAVBAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-panel rounded-full px-6 py-3">
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 items-center font-medium text-sm text-gray-300">
+                <li><a href="#home" class="nav-link hover:text-white transition-colors relative">Home</a></li>
+                <li><a href="#about" class="nav-link hover:text-white transition-colors relative">About</a></li>
+                <li><a href="#projects" class="nav-link hover:text-white transition-colors relative">Projects</a></li>
+                <li><a href="#skills" class="nav-link hover:text-white transition-colors relative">Skills</a></li>
+                <li><a href="#education" class="nav-link hover:text-white transition-colors relative">Education</a></li>
+                <li><a href="#contact" class="nav-link hover:text-white transition-colors relative">Contact</a></li>
+            </ul>
+
+            <!-- Social Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://github.com/Heyman04"
+                    class="text-gray-400 hover:text-accent1 transition-colors text-lg"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/heymaa-lochan/"
+                    class="text-gray-400 hover:text-accent2 transition-colors text-lg"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-20 left-6 right-6 glass-panel rounded-2xl p-6 flex flex-col space-y-4 shadow-lg">
+            <a href="#home" class="mobile-link text-gray-300 hover:text-white font-medium">Home</a>
+            <a href="#about" class="mobile-link text-gray-300 hover:text-white font-medium">About</a>
+            <a href="#projects" class="mobile-link text-gray-300 hover:text-white font-medium">Projects</a>
+            <a href="#skills" class="mobile-link text-gray-300 hover:text-white font-medium">Skills</a>
+            <a href="#education" class="mobile-link text-gray-300 hover:text-white font-medium">Education</a>
+            <a href="#contact" class="mobile-link text-gray-300 hover:text-white font-medium">Contact</a>
+            <div class="flex space-x-4 pt-4 border-t border-gray-700/50">
+                <a href="#" class="text-gray-400 hover:text-accent1 transition-colors text-xl"><i
+                        class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-accent2 transition-colors text-xl"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section id="home"
+        class="min-h-screen flex items-center justify-center pt-20 px-6 md:px-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            <!-- Left: Typography & CTA -->
+            <div class="space-y-6 fade-in-up">
+                <div class="inline-block py-1 px-3 rounded-full glass-badge text-sm font-medium text-accent1 mb-2">
+                    <i class="fas fa-code mr-2"></i> Welcome to my world
+                </div>
+                <h1 class="font-heading text-5xl md:text-7xl lg:text-7xl font-bold leading-tight">
+                    Full Stack <br>
+                    <span class="gradient-text pb-2">Developer</span>
+                </h1>
+                <p class="text-gray-400 text-lg md:text-xl max-w-lg font-light leading-relaxed">
+                    I build scalable web applications and immersive digital experiences with modern technologies.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#projects"
+                        class="btn-primary px-8 py-3 rounded-full font-medium transition-all shadow-glow hover:scale-105 active:scale-95 flex items-center group">
+                        View Projects
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#"
+                        class="btn-secondary px-8 py-3 rounded-full font-medium transition-all glass-panel hover:bg-white/10 active:scale-95 flex items-center">
+                        <i class="fas fa-download mr-2"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Image -->
+            <div class="relative flex justify-center lg:justify-end fade-in-up delay-200">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 image-container perspective-1000">
+                    <!-- Glow effect behind image -->
+                    <div
+                        class="absolute inset-x-0 -bottom-10 h-1/2 bg-gradient-custom opacity-40 blur-2xl rounded-full">
+                    </div>
+
+                    <!-- Image Card -->
+                    <div
+                        class="hero-image-card w-full h-full rounded-3xl overflow-hidden glass-panel border border-white/10 relative z-10 floating-anim transform-style-3d">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bgMain/80 to-transparent z-10"></div>
+                        <!-- REPLACE THIS with profile image using <img src="your-image.jpg"> -->
+                        <div
+                            class="w-full h-full bg-sec1/30 flex items-center justify-center text-gray-500 text-center p-4">
+                            <span class="text-sm"><img src="D:\Me\Shadows.png"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-24 px-6 md:px-12 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">About <span class="gradient-text">Me</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-custom mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Left: Smaller Image -->
+                <div class="lg:col-span-4 flex justify-center fade-in-scroll">
+                    <div
+                        class="w-64 h-64 rounded-full overflow-hidden glass-panel border border-accent1/30 p-2 shadow-glow-sm relative group">
+                        <div
+                            class="w-full h-full rounded-full overflow-hidden bg-sec2/20 flex items-center justify-center relative z-10">
+                            <!-- REPLACE THIS with profile image -->
+                            <img src="D:\Me\Shadows.png" class="fas fa-user-astronaut text-4xl text-gray-500">
+                        </div>
+                        <!-- Hover spin ring -->
+                        <div
+                            class="absolute inset-0 rounded-full border-2 border-dashed border-accent2/50 opacity-0 group-hover:opacity-100 group-hover:animate-spin-slow transition-opacity duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Bio & Stats -->
+                <div class="lg:col-span-8 space-y-8 fade-in-scroll delay-100">
+                    <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradStart/10 blur-2xl rounded-full"></div>
+                        <h3 class="text-2xl font-heading font-semibold mb-4 text-white">Who am I?</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">
+                            I am a passionate Full Stack Developer with a knack for creating intuitive, dynamic, and
+                            engaging user experiences. With expertise spanning from front-end aesthetics to robust
+                            back-end architecture, I bridge the gap between design and intricate technical
+                            functionality.
+                        </p>
+
+                        <!-- Highlight Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                class="flex items-start space-x-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-gradStart/20 flex items-center justify-center text-accent1 shrink-0">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Full Stack Dev</h4>
+                                    <p class="text-sm text-gray-500">Seamless integration of UI & logic</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start space-x-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-gradEnd/20 flex items-center justify-center text-accent2 shrink-0">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">UI/UX Design</h4>
+                                    <p class="text-sm text-gray-500">Modern, glassmorphic interfaces</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start space-x-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-sec1/20 flex items-center justify-center text-[#646D98] shrink-0">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">Backend Architecture</h4>
+                                    <p class="text-sm text-gray-500">Scalable & secure APIs</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start space-x-4 p-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-accent1/20 flex items-center justify-center text-accent1 shrink-0">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-200">AI Integration</h4>
+                                    <p class="text-sm text-gray-500">Smart features & chatbots</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div
+                            class="glass-panel p-6 rounded-2xl text-center flex flex-col items-center justify-center group hover:-translate-y-2 transition-transform duration-300">
+                            <span class="text-3xl font-heading font-bold gradient-text mb-1 stat-number"
+                                data-target="5">0</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Projects Completed</span>
+                        </div>
+                        <div
+                            class="glass-panel p-6 rounded-2xl text-center flex flex-col items-center justify-center group hover:-translate-y-2 transition-transform duration-300">
+                            <span class="text-3xl font-heading font-bold gradient-text mb-1 stat-number"
+                                data-target="15">0</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Tech Used</span>
+                        </div>
+                        <div
+                            class="glass-panel p-6 rounded-2xl text-center flex flex-col items-center justify-center group hover:-translate-y-2 transition-transform duration-300">
+                            <span class="text-3xl font-heading font-bold gradient-text mb-1 stat-number"
+                                data-target="1">0</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Years Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SKILLS SECTION -->
+    <section id="skills" class="py-24 px-6 md:px-12 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">Technical <span
+                        class="gradient-text">Skills</span></h2>
+                <div class="w-24 h-1 bg-gradient-custom mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Frontend -->
+                <div class="skill-category fade-in-scroll">
+                    <h3 class="text-xl font-heading font-semibold mb-6 text-gray-200 border-b border-white/10 pb-2">
+                        Frontend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-html5 text-3xl text-orange-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">HTML</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-css3-alt text-3xl text-blue-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">CSS</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-js text-3xl text-yellow-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">JS</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-react text-3xl text-cyan-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">React</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center col-span-2 cursor-pointer group">
+                            <i
+                                class="fas fa-wind text-2xl text-teal-400 mb-1 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Tailwind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-category fade-in-scroll delay-100">
+                    <h3 class="text-xl font-heading font-semibold mb-6 text-gray-200 border-b border-white/10 pb-2">
+                        Backend</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-node-js text-3xl text-green-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Node.js</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fas fa-server text-3xl text-gray-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Express</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-python text-3xl text-yellow-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Python</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fas fa-code text-3xl text-green-800 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Django</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-category fade-in-scroll delay-200">
+                    <h3 class="text-xl font-heading font-semibold mb-6 text-gray-200 border-b border-white/10 pb-2">
+                        Database</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group col-span-2">
+                            <i
+                                class="fas fa-leaf text-3xl text-green-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">MongoDB</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fas fa-database text-3xl text-blue-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">PostgreSQL</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fas fa-table text-3xl text-orange-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-category fade-in-scroll delay-300">
+                    <h3 class="text-xl font-heading font-semibold mb-6 text-gray-200 border-b border-white/10 pb-2">
+                        Tools</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-git-alt text-3xl text-orange-600 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Git</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-docker text-3xl text-blue-500 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Docker</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fas fa-code-branch text-3xl text-blue-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">VS Code</span>
+                        </div>
+                        <div
+                            class="skill-card glass-panel p-4 rounded-xl flex flex-col items-center justify-center text-center cursor-pointer group">
+                            <i
+                                class="fab fa-figma text-3xl text-purple-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-sm font-medium text-gray-300">Figma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-6 md:px-12 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-in-scroll">
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">Featured <span
+                            class="gradient-text">Projects</span></h2>
+                    <div class="w-24 h-1 bg-gradient-custom rounded-full"></div>
+                </div>
+                <a href="#"
+                    class="text-gray-400 hover:text-white mt-4 md:mt-0 flex items-center group transition-colors">
+                    View All Projects <i
+                        class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card group rounded-2xl overflow-hidden glass-panel fade-in-scroll">
+                    <div class="relative h-64 overflow-hidden bg-sec1/20">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bgMain via-transparent to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500">
+                        </div>
+                        <!-- Placeholder for Project Image -->
+                        <div
+                            class="w-full h-full flex items-center justify-center text-gray-600 project-img-placeholder group-hover:scale-110 transition-transform duration-700">
+                            <img src="D:\FULL STACK\html & css\plant.jpeg" alt="">
+                        </div>
+
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-bgMain/80 text-white border border-white/10 backdrop-blur-sm">React</span>
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-gradStart/80 text-white border border-white/10 backdrop-blur-sm">AI</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 relative z-20 -mt-10">
+                        <h3
+                            class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-accent1 transition-colors">
+                            AI Plant Doc</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Developed an AI-based system that identifies plant species and detects possible plant
+                            diseases using leaf images. The model analyzes visual patterns in plant leaves and provides
+                            predictions to help users monitor plant health and support better agricultural
+                            decision-making.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card group rounded-2xl overflow-hidden glass-panel fade-in-scroll delay-100">
+                    <div class="relative h-64 overflow-hidden bg-sec2/20">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bgMain via-transparent to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="w-full h-full flex items-center justify-center text-gray-600 project-img-placeholder group-hover:scale-110 transition-transform duration-700">
+                            <img src="D:\FULL STACK\html & css\health.jpeg" alt="">
+                        </div>
+
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-bgMain/80 text-white border border-white/10 backdrop-blur-sm">MERN</span>
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-accent2/80 text-white border border-white/10 backdrop-blur-sm">Health</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 relative z-20 -mt-10">
+                        <h3
+                            class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-accent1 transition-colors">
+                            MindMingle Platform</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            A comprehensive mental health community platform. Users can track moods, join verified
+                            support groups, and access teletherapy resources securely.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card group rounded-2xl overflow-hidden glass-panel fade-in-scroll">
+                    <div class="relative h-64 overflow-hidden bg-accent1/10">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bgMain via-transparent to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="w-full h-full flex items-center justify-center text-gray-600 project-img-placeholder group-hover:scale-110 transition-transform duration-700">
+                            <img src="D:\FULL STACK\html & css\trip.jpeg">
+                        </div>
+                    </div>
+
+                    <div class="p-8 relative z-20 -mt-10">
+                        <h3
+                            class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-accent1 transition-colors">
+                            Trip Planner</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Tourist Tracking and Trip Planning App is a smart travel application designed to help users
+                            organize and manage their trips efficiently. The app allows tourists to plan itineraries,
+                            track their location using GPS, and discover nearby attractions, hotels, and restaurants.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card group rounded-2xl overflow-hidden glass-panel fade-in-scroll delay-100">
+                    <div class="relative h-64 overflow-hidden bg-gradStart/10">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-bgMain via-transparent to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="w-full h-full flex items-center justify-center text-gray-600 project-img-placeholder group-hover:scale-110 transition-transform duration-700">
+                            <img src="D:\FULL STACK\html & css\tracker.jpeg" alt="">
+                        </div>
+
+                        <div class="absolute top-4 right-4 z-20 flex gap-2">
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-bgMain/80 text-white border border-white/10 backdrop-blur-sm">Django</span>
+                            <span
+                                class="px-3 py-1 text-xs font-semibold rounded-full bg-sec1/80 text-white border border-white/10 backdrop-blur-sm">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <div class="p-8 relative z-20 -mt-10">
+                        <h3
+                            class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-accent1 transition-colors">
+                            Full Stack Bug Tracker</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            An enterprise-level issue tracking system. Role-based access control, real-time WebSocket
+                            notifications, and comprehensive analytic dashboards.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EDUCATION / EXPERIENCE -->
+    <section id="education" class="py-24 px-6 md:px-12 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">Journey & <span
+                        class="gradient-text">Education</span></h2>
+                <div class="w-24 h-1 bg-gradient-custom mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative border-l-2 border-white/10 ml-4 md:ml-0 md:pl-0 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 md:pl-0 fade-in-scroll">
+                    <!-- Dot -->
+                    <div
+                        class="absolute left-[-9px] md:left-1/2 md:transform md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-gradStart border-4 border-bgMain shadow-[0_0_10px_#6408BF]">
+                    </div>
+
+                    <div class="md:w-1/2 md:pr-12 md:text-right md:absolute md:left-0 md:top-0">
+                        <h4 class="text-xl font-bold text-white mb-1">Full Stack Development Certification
+                        </h4>
+                        <p class="text-accent1 text-sm font-medium mb-2">Qspider • 2022</p>
+                    </div>
+
+                    <div class="md:w-1/2 md:ml-auto md:pl-12">
+                        <div class="glass-panel p-6 rounded-xl hover:-translate-y-1 transition-transform">
+                            <p class="text-gray-400 text-sm">
+                                Completing a Full Stack Web Development course means you have learned how to build both
+                                the frontend (client-side) and backend (server-side) of web applications, including
+                                databases and deployment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 md:pl-0 fade-in-scroll delay-100">
+                    <div
+                        class="absolute left-[-9px] md:left-1/2 md:transform md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-accent2 border-4 border-bgMain shadow-[0_0_10px_#D79BC8]">
+                    </div>
+
+                    <div class="md:w-1/2 md:pl-12 md:ml-auto md:text-left mb-4 md:mb-0">
+                        <h4 class="text-xl font-bold text-white mb-1">B.Tech in Artificial Intelligence and Data Science
+                        </h4>
+                        <p class="text-accent2 text-sm font-medium mb-2">Agni of Technology • 2023 - 2027</p>
+                    </div>
+
+                    <div class="md:w-1/2 md:mr-auto md:pr-12 md:absolute md:left-0 md:top-0">
+                        <div class="glass-panel p-6 rounded-xl hover:-translate-y-1 transition-transform">
+                            <p class="text-gray-400 text-sm md:text-right">
+                                Artificial Intelligence and Data Science Engineering is a specialized engineering degree
+                                that focuses on building systems capable of learning from data and automating
+                                decision-making.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 md:pl-0 fade-in-scroll delay-200">
+                    <div
+                        class="absolute left-[-9px] md:left-1/2 md:transform md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-gradEnd border-4 border-bgMain shadow-[0_0_10px_#B1164E]">
+                    </div>
+
+                    <div class="md:w-1/2 md:pr-12 md:text-right md:absolute md:left-0 md:top-0">
+                        <h4 class="text-xl font-bold text-white mb-1">Higher Secondary Education (Class XII)</h4>
+                        <p class="text-gradEnd text-sm font-medium mb-2">kendriya vidyalaya . 2022</p>
+                    </div>
+
+                    <div class="md:w-1/2 md:ml-auto md:pl-12">
+                        <div class="glass-panel p-6 rounded-xl hover:-translate-y-1 transition-transform">
+                            <p class="text-gray-400 text-sm">
+                                I completed my Higher Secondary Education (Class XII) under the Central Board of
+                                Secondary Education (CBSE), where I built a strong academic foundation in core subjects
+                                and developed analytical and problem-solving skills
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTACT SECTION -->
+    <section id="contact" class="py-24 px-6 md:px-12 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-scroll">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4">Let's <span
+                        class="gradient-text">Connect</span></h2>
+                <div class="w-24 h-1 bg-gradient-custom mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-6 fade-in-scroll">
+                    <h3 class="text-3xl font-heading font-semibold text-white mb-6">Get In Touch</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        I'm currently open to new opportunities. Whether you have a question, a project proposal, or
+                        just want to say hi, I'll try my best to get back to you!
+                    </p>
+
+                    <div
+                        class="flex items-center p-4 glass-panel rounded-xl group hover:border-accent1/50 transition-colors">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-accent1 text-xl mr-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 uppercase font-medium">Email</p>
+                            <a href="heymanlochan004@gmail.com"
+                                class="text-lg text-white font-medium hover:text-accent1 transition-colors">heymanlochan004@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 mt-8 pt-8 border-t border-white/10">
+                        <a href="https://github.com/Heyman04"
+                            class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gray-300 hover:text-white hover:bg-gradStart transition-all hover:scale-110 shadow-glow-sm">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/heymaa-lochan/"
+                            class="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-gray-300 hover:text-white hover:bg-accent1 transition-all hover:scale-110 shadow-glow-sm text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-panel p-8 rounded-2xl relative overflow-hidden fade-in-scroll delay-100">
+                    <div class="absolute -right-20 -top-20 w-40 h-40 bg-gradEnd/20 rounded-full blur-2xl"></div>
+
+                    <form id="contact-form" class="space-y-6 relative z-10">
+                        <div class="group">
+                            <label for="name"
+                                class="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-accent1 transition-colors">Your
+                                Name</label>
+                            <input type="text" id="name" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent1 focus:bg-white/10 transition-all placeholder-gray-600"
+                                placeholder="Shruti Natasion">
+                        </div>
+
+                        <div class="group">
+                            <label for="email"
+                                class="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-accent1 transition-colors">Your
+                                Email</label>
+                            <input type="email" id="email" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent1 focus:bg-white/10 transition-all placeholder-gray-600"
+                                placeholder="Shruti@example.com">
+                        </div>
+
+                        <div class="group">
+                            <label for="message"
+                                class="block text-sm font-medium text-gray-400 mb-2 group-focus-within:text-accent1 transition-colors">Message</label>
+                            <textarea id="message" rows="4" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent1 focus:bg-white/10 transition-all placeholder-gray-600 resize-none"
+                                placeholder="Hello there..."></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full btn-primary py-4 rounded-xl font-bold text-lg shadow-glow hover:-translate-y-1 transition-transform flex justify-center items-center">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <footer class="relative pt-12 pb-6 px-6 md:px-12 border-t border-white/10 overflow-hidden mt-12 z-10">
+        <div
+            class="absolute bottom-[-50%] left-1/2 transform -translate-x-1/2 w-[80%] h-[100%] rounded-[50%] bg-gradient-custom opacity-10 blur-[100px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center relative z-10">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <a href="#" class="text-2xl font-heading font-bold gradient-text inline-block mb-2">Portfolio<span
+                        class="text-accent1">.</span></a>
+                <p class="text-gray-500 text-sm">© 2024 Full Stack Developer. All rights reserved.</p>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <!-- Quick links -->
+                <a href="#home" class="text-gray-500 hover:text-white text-sm transition-colors">Home</a>
+                <a href="#projects" class="text-gray-500 hover:text-white text-sm transition-colors">Projects</a>
+                <a href="#contact" class="text-gray-500 hover:text-white text-sm transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
